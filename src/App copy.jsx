@@ -1,51 +1,31 @@
-// import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-
-import {BrowserRouter as Router, 
-  Link, 
-  Outlet, 
-  Route, 
-  Routes
-} from "react-router-dom";
-
 import './App.scss'
-// import Title from './Components/Title'
-// import Button from './Components/Button'
-import Home from './pages/Home';
-import Characters from './pages/Characters';
+import Title from './Components/Title'
+import Button from './Components/Button'
 
 function App() {
 
-  // const [count, setCount] = useState(0)
-  // // console.log(count);
+  const [count, setCount] = useState(0)
+  // console.log(count);
 
-  // useEffect(() => {
+  useEffect(() => {
     
   
-  //   return () => {
-  //     console.log("useEffect is orking also when count is changing!!!")
+    return () => {
+      console.log("useEffect is orking also when count is changing!!!")
 
-  //     //TODO: fetch de super api
+      //TODO: fetch de super api
 
-  //   }
-  // }, [count])
+    }
+  }, [count])
   
 
   return (
 
     <div className='App'>
-      <Router>
-
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/characters" element={<Characters />} />
-          </Route>
-        </Routes>
-
-      </Router>
-      {/* <Title />
+      <Title />
       <Title text="texto componente 2" />
       <Title text="texto componente 3" />
       <Button onClick={() => alert("primer boton")} />
@@ -56,7 +36,7 @@ function App() {
       <Button 
         onClick={() => setCount(count + 1)}  
         text="+1" />
-      <Title text={`number of clicks: ${count}`} /> */}
+      <Title text={`number of clicks: ${count}`} />
 
     </div>
 
@@ -82,27 +62,7 @@ function App() {
     //     Click on the Vite and React logos to learn more
     //   </p>
     // </>
-  );
+  )
 }
 
-
-
-function Layout(){
-
-  return(
-    <>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/characters">Characters</Link>
-      </nav>
-
-      <Outlet />
-
-    </>
-  );
-
-}
-
-
-
-export default App;
+export default App
